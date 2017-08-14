@@ -159,7 +159,7 @@ class Plugin {
   }
 
   _showResult() {
-    for (const result of this._results) {
+    for (const result of this._results || []) {
       console.log(`[33mwarning: signature mismatch: ${result.name} ${result.filePath}#${result.lines[0].lineNumber}[32m`);
       for (const line of result.lines) {
         console.log(`${line.lineNumber}| ${line.line}`);
